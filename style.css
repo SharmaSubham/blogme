@@ -1,0 +1,108 @@
+*{
+margin: 0%;
+padding: 0%;
+/* background-color: #f6f6f6; */
+box-sizing: border-box;
+}
+header{
+background-color: #008489;
+border: 1px solid red;
+height: 67px;
+
+}
+.icon{
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  height: inherit;
+  padding-right: 5px;
+  margin: 7px;
+  font-size: 1.5rem;
+
+
+}
+.menu{
+   display: flex;
+   /* position: relative; */
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.menu ul{
+   display: flex;
+}
+.menu ul li a{
+   color: white;
+   display: block;
+   padding: 7px 42px;
+   text-decoration: none;
+   /* padding: 21px; */
+}
+.menu ul {
+   list-style-type: none;
+   bottom: 60px;
+}
+.menu ul li a :hover{
+    background-color: burlywood;
+  transition: 0.5s ;
+
+}
+header ul {
+   position: relative;
+}
+
+.element-1{
+margin: 15px;
+
+}
+/* h1, h2{
+   font-family: Bebas Neue;
+} */
+
+
+h1{
+   text-align: center;
+   margin-top: 42px;
+   font-size: 3rem;
+   font-family: Bebas Neue;
+}
+ header .menu-toggle{
+   display: none;
+}
+.corosoul-element{
+   justify-content: center;
+   padding: 22px;
+   margin: 5px;
+   height: 300px;
+   width: 454px;
+   border:  2px solid black;
+   border-radius: 5px;
+   
+
+}
+.corosoul{
+  
+   display: flex;
+   flex-direction:row;
+  margin-top:  44px;
+
+}
+  .Register h2{
+   text-align: center;
+   margin-top: 42px;
+   font-size: 2rem;
+  
+
+  }
+  .button{
+   text-align: center;
+   float: left;
+
+
+
+  }
+  footer {
+   height: 300px;
+   background-color: #008489;
+   border: 1px solid red;
+  
+
+  }
