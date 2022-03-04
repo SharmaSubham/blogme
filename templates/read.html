@@ -1,0 +1,72 @@
+{% load static %}
+{% block css%}
+
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'style/read.css' %}"/>
+{% endblock %}
+
+{% block body %}
+{% include 'header.html' %}
+
+
+    <div class="title">
+        <h1>{{post.blog_title}}</h1>
+        <div class="underscores">by <a href="#">  {{post.user_name}}</a>
+            <button>Follow</button> <br>
+           <small>{{post.upload}}</small> 
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="main-author">
+            <div class="post_element">
+                <div class="post">
+                    <img src="{{post.image.url}}" alt="{{post.blog_title}}">
+                </div>
+                <div class="post_text">
+                    {{post.Quote}}
+                    <br>
+                    {{post.tags}}
+                    <hr>
+                </div>
+            </div>
+
+            <form action="#" method="post">
+                <p>Leave a comment....</p>
+                <div class="commentbox">
+                    <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1em;">
+                </textarea>
+                </div>
+                <input type="submit" value="Submit">
+
+            </form>
+            <div class="comment-cont">
+
+                <p>Comments....</p>
+
+                <div class="comment-element">
+                    <hr>
+                    <div class="comment-profle">
+                        <a href="#"><strong>Krishna Upadhyay</strong></a> --2Nov 3:00pm
+                        <button>Reply</button> <br>
+                    </div>
+                    It is a great blog portraying the essence o society trough varoius topologies..
+                    <hr>
+                    <div class="more_comment">
+                        <a href="#"><small>
+                                More comments.</small></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="others">
+            <h3>More By Author.....</h3>
+            {% if Blog in other %}
+                <ul>
+                    <li><a href="#">{other.blog_title}</a></li>
+                   </ul>
+                   {% endif %}
+             
+        </div>
+    </div>
+    {% endblock %}
+
