@@ -23,26 +23,28 @@
     </form>
     <!-- <hr> -->
     <div class="author-container">
-      {% for Author in author %}
+      {% for Profile in author %}
       <div class="author-info">
         <div class="author-image">
-          <img src="{{ Author.auth_img.url  }}" alt="" style="width:100%">
+          <img src="{{Profile.auth_image.url}}" alt="" style="width:100%">
         </div>
         <div class="author-dsc">
           <div class="author-name">
-           {{Author.user_name}}
+           {{Profile.user_name}}
 
             <a href="profile.html">(View posts)</a>
           </div>
-          <div class="author-bio">
-            <h5>{{Author.full_name}}</h5>
-           {{Author.intro|slice:"250"}}
+          <div class="author-Bio">
+            <h5>{{Profile.full_name}}</h5>
+           {{Profile.Bio|slice:"250"}}
           </div>
           
           <div class="social-buttons">
-            <a href="#" class="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
+            {% if Profile.instagram %}
+            <a href= "{{Profile.instagram}}" class="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
+            {% endif %}
             <a href="#" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>

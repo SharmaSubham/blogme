@@ -1,42 +1,40 @@
 from distutils.command.upload import upload
 from operator import truediv
-from pyexpat import model
-from tkinter.messagebox import RETRY
-import uuid
+from pickle import TRUE
 from django.db import models
+from django.contrib.auth.models import User
+import uuid
 from user.models import Profile
-# Create your models here.
-
-
-
 
 
 
 class Blog(models.Model):
-    # object=models.CharField
-    blog_title=models.CharField( max_length=70 ,null=False)
-    user_name= models.ForeignKey(
-        Profile, null=True, blank=True, on_delete=models.CASCADE )
-    image = models.ImageField(upload_to="static/blogging/images", default="")
-    Quote=models.TextField(max_length=2000, default="")
-    upload=models.DateTimeField()
-    short_intro=models.TextField(max_length=220 ,default="")
-    tags =models.ManyToManyField("Tags", related_name="tag")
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
+    Author=models.ForeignKey(Profile,on_delete=models.CASCADE)
+    blog=models.TextField()
+    blog_title=models.CharField(max_length=33)
+    desc=models.CharField(max_length=100, null=True)
+    id=models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
+    blog_image=models.ImageField(null=True,blank=True,upload_to='static/blogging/images')
+    Pen_name=models.CharField(max_length=7)
+    insta=models.CharField(max_length=20, blank=True)
+    linkedin=models.CharField(max_length=9,blank=True)
+    upload=models.DateTimeField(auto_now_add=True)
+
     class Meta:
         ordering=['upload']
-        
+
     def __str__(self):
-        return self.blog_title
+        return self.blog_title    
 
 class Tags(models.Model):
-    name = models.CharField(max_length=200)
-    created = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
+    name=models.CharField(max_length=9)
+    created=models.DateTimeField(auto_now_add=TRUE)
+    id=models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
+   
     class Meta:
-        ordering=['name']
+        ordering=['created']
 
     def __str__(self):
-        return self.name
+        return self.name 

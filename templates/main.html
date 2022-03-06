@@ -28,10 +28,10 @@
 <div class="bottom">
     <div class="newpost">
         <h2>Recent-Post</h2>
-        {% for Blog in latest_blog %}
+        {% for Blog in work %}
         <div class="post-corosoul">
             <div class="post-corosoul-element">
-                <img src="{{Blog.image.url}}" alt="">
+                <img src="{{Blog.blog_image.url}}" alt="">
             </div>
             <div class="quote-new">
                 <div class="quote-title-new">
@@ -39,10 +39,10 @@
 
                 </div>
                 <div class="quote-about-new">
-                    {{Blog.short_intro}}.
+                    {{Blog.desc}}.
                 </div>
                 <div class="quote-author-new">
-                    {{Blog.user_name}}
+                    {{Blog.Author}}
                     <div class="datetime">
                         Uploaded at {{Blog.upload}}
                     </div>
@@ -59,13 +59,7 @@
 
     <div class="info-bar">
         <h2>Topics</h2>
-        <ul>
-            {% for Tags in tags %}
-            <li> <a href="#">{{Tags.name}}</a></li>
-            <hr>
-            {% endfor %}
-            
-        </ul>
+        
         
         <div class="newsletter">
             <h2>Sunscribe to newsletter</h2>
